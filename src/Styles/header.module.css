@@ -1,0 +1,80 @@
+header {
+  width: 100%;
+  height: 150px;
+  background-image: url("../assets/bg-header-desktop.svg");
+  background-color: var(--dark-cyan);
+  position: relative;
+}
+.filterTabSection {
+  max-width: 1100px;
+  width: 90%;
+  background-color: white;
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 5px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: -1px 16px 48px -16px var(--dark-cyan);
+  -webkit-box-shadow: -1px 16px 48px -16px var(--dark-cyan);
+  -moz-box-shadow: -1px 16px 48px -16px var(--dark-cyan);
+}
+.tabsSection {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.filterTab {
+  background-color: var(--light-cyan-tab);
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  font-weight: 700;
+}
+.filterTab > span {
+  padding: 0px 5px;
+  color: var(--dark-cyan);
+  font-size: 15px;
+}
+.removeBtn {
+  background-color: var(--dark-cyan);
+  width: 25px;
+  height: 100%;
+  padding: 0px 5px;
+  color: white;
+  font-size: 15px;
+}
+.removeBtn:hover {
+  background-color: var(--very-dark-gray-cyan);
+}
+
+.clearButton {
+  color: var(--dark-cyan);
+  border-width: 0px;
+  transition: all 0.5s ease-in;
+  background: none;
+  padding: 2px 10px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 15px;
+}
+.clearButton:hover {
+  border-bottom: 2px solid var(--dark-cyan);
+}
+
+@media (width <=768px) {
+  .filterTabSection {
+    padding: 10px;
+  }
+  .removeBtn {
+    padding: 2px;
+  }
+}
