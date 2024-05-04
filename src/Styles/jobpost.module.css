@@ -1,0 +1,115 @@
+.jobPostWrapper {
+  max-width: 1100px;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: white;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
+.section1 {
+  /* background-color: red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.jobDetailsSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: start;
+  /* background-color: rgb(0, 26, 255); */
+  height: 100px;
+}
+.details1 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.company {
+  font-weight: 700;
+  color: var(--dark-cyan);
+}
+
+.newBanner,
+.featuresBanner {
+  font-weight: 500;
+  color: white;
+  font-size: 15px;
+  padding: 5px 15px;
+  border-radius: 50px;
+}
+.newBanner {
+  background-color: var(--dark-cyan);
+}
+.featuresBanner {
+  background-color: var(--very-dark-gray-cyan);
+}
+.jobPosition {
+  color: var(--dark-cyan);
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.details3 {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  color: var(--dark-gray-cyan);
+}
+
+.dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: var(--dark-gray-cyan);
+}
+
+/* Section 2 */
+
+.section2 {
+  /* background-color: red; */
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.tabOption {
+  background-color: var(--bg-cyan);
+  color: var(--dark-cyan);
+  padding: 5px 15px;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all .5s ;
+}
+
+.tabOption:hover{
+    background-color: var(--dark-cyan);
+    color: white;
+}
+
+@media(width<767px){
+    .section1{
+        position: relative;
+    }
+    .image{
+        width: 50px;
+        position: absolute;
+        top:0;
+        left: 10px;
+    }
+    .jobDetailsSection{
+        margin-top: 15px;
+    }
+    .section2{
+        justify-content: flex-start;
+    }
+}

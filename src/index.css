@@ -27,15 +27,13 @@ code {
   --very-dark-gray-cyan : hsl(180, 14%, 20%);
 }
 
-.flex{
+main{
+  background-color: var(--bg-cyan);
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-}
-
-.flex-y{
-  display: flex;
-  align-items: center;
+  padding-top: 50px;
+  gap: 30px;
 }
 
 button{
