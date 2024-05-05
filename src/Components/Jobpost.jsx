@@ -31,9 +31,9 @@ const Jobpost = () => {
             <div className={Styles.jobDetailsSection}>
               <div className={Styles.details1}>
                 <span className={Styles.company}>{job.company}</span>
-                {job.new && <span className={Styles.newBanner}>New</span>}
+                {job.new && <span className={Styles.newBanner}>New!</span>}
                 {job.featured && (
-                  <span className={Styles.featuresBanner}>Features</span>
+                  <span className={Styles.featuresBanner}>Featured</span>
                 )}
               </div>
 
