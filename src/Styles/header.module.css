@@ -18,9 +18,9 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: -1px 16px 48px -16px var(--dark-cyan);
-  -webkit-box-shadow: -1px 16px 48px -16px var(--dark-cyan);
-  -moz-box-shadow: -1px 16px 48px -16px var(--dark-cyan);
+  box-shadow: 0px 4px 8px -2px var(--dark-cyan-shadow );
+-webkit-box-shadow: 0px 4px 8px -2px var(--dark-cyan-shadow );
+-moz-box-shadow: 0px 4px 8px -2px var(--dark-cyan-shadow );
 }
 .tabsSection {
   display: flex;
