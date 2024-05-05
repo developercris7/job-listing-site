@@ -13,7 +13,7 @@ import img10 from "../assets/the-air-filter-company.svg";
 
 const images = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10];
 
-const Jobpost = ({ job, handleOption }) => {
+const Jobpost = ({ job, handleInsertFilters }) => {
   return (
     <div className={Styles.jobPostWrapper}>
       <section className={Styles.section1}>
@@ -45,13 +45,13 @@ const Jobpost = ({ job, handleOption }) => {
       <section className={Styles.section2}>
         <span
           className={Styles.tabOption}
-          onClick={() => handleOption(job.role,"role")}
+          onClick={() => handleInsertFilters(job.role,"role")}
         >
           {job.role}
         </span>
         <span
           className={Styles.tabOption}
-          onClick={() => handleOption(job.level,"level")}
+          onClick={() => handleInsertFilters(job.level,"level")}
         >
           {job.level}
         </span>
@@ -59,7 +59,7 @@ const Jobpost = ({ job, handleOption }) => {
           <span
             key={index}
             className={Styles.tabOption}
-            onClick={() => handleOption(language,"languages")}
+            onClick={() => handleInsertFilters(language,"languages")}
           >
             {language}
           </span>
@@ -69,7 +69,7 @@ const Jobpost = ({ job, handleOption }) => {
             <span
               key={index}
               className={Styles.tabOption}
-              onClick={() => handleOption(tool,"tools")}
+              onClick={() => handleInsertFilters(tool,"tools")}
             >
               {tool}
             </span>

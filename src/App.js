@@ -4,53 +4,69 @@ import Header from "./Components/Header";
 import Jobpost from "./Components/Jobpost";
 
 function App() {
-  const [filterTabs,setFilterTabs] = useState({
-    role :[],
-    level : [],
-    languages : [],
-    tools : []
-  })
- 
+  const [filterTabs, setFilterTabs] = useState({
+    role: [],
+    level: [],
+    languages: [],
+    tools: [],
+  });
+
   const [jobLists, setJobLists] = useState(data);
 
   useEffect(() => {
-    const {role,languages,level,tools} = filterTabs;
+    const { role, languages, level, tools } = filterTabs;
+    let filteredJobs = data;
 
- console.log('Effected')
-    if(role.length > 0){
-      const jobs = jobLists.filter((job) => role.includes(job.role));
-      setJobLists(jobs)
+    if (role.length > 0) {
+      filteredJobs = filteredJobs.filter((job) => role.includes(job.role));
     }
-    if(level.length > 0){
-      console.log("hiii")
-      const jobs = jobLists.filter((job) => level.includes(job.level))
-      setJobLists(jobs)
-  console.log(jobs);
+    if (level.length > 0) {
+      filteredJobs = filteredJobs.filter((job) => level.includes(job.level));
     }
 
-    if(languages.length > 0){
-      const jobs = jobLists.filter((job)=>languages.every((lan) => job.languages.includes(lan)))
-      setJobLists(jobs)
+    if (languages.length > 0) {
+      filteredJobs = filteredJobs.filter((job) =>
+        languages.every((lan) => job.languages.includes(lan))
+      );
     }
 
-    if(tools.length > 0){
-      const jobs = jobLists.filter((job)=>tools.every((lan) => job.tools.includes(lan)))
-      setJobLists(jobs)
+    if (tools.length > 0) {
+      filteredJobs = filteredJobs.filter((job) =>
+        tools.every((lan) => job.tools.includes(lan))
+      );
     }
-  },[filterTabs]);
 
+    setJobLists(filteredJobs);
+  }, [filterTabs]);
 
-  const handleOption = (option,tabs) => {
-    const d = filterTabs[tabs]
-    setFilterTabs({...filterTabs,[tabs]:[...d,option]})
+  const handleInsertFilters = (option, tabs) => {
+    const data = filterTabs[tabs];
+    if (!data.includes(option)) {
+      setFilterTabs({ ...filterTabs, [tabs]: [...data, option] });
+    }
+  };
+
+  const handleRemoveFilters = (tabs, index) => {
+    const data = filterTabs[tabs];
+    data.splice(index, 1);
+    setFilterTabs({ ...filterTabs, [tabs]: data });
+  };
+
+  const handleClearAllFilters = () => {
+    setFilterTabs({
+      role: [],
+      level: [],
+      languages: [],
+      tools: [],
+    });
   };
 
   return (
     <div>
-      <Header filterTabs={filterTabs} />
+      <Header filterTabs={filterTabs} handleRemoveFilters={handleRemoveFilters} handleClearAllFilters={handleClearAllFilters} />
       <main>
         {jobLists.map((job) => (
-          <Jobpost job={job} handleOption={handleOption} key={job.id} />
+          <Jobpost job={job} handleInsertFilters={handleInsertFilters} key={job.id} />
         ))}
       </main>
     </div>
