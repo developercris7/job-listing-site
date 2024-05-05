@@ -11,6 +11,12 @@
   box-shadow: 0px 4px 8px -2px var(--dark-cyan-shadow );
 -webkit-box-shadow: 0px 4px 8px -2px var(--dark-cyan-shadow );
 -moz-box-shadow: 0px 4px 8px -2px var(--dark-cyan-shadow );
+border-radius: 3px;
+}
+
+.featuredJob{
+border-left: 4px solid black;
+
 }
 
 .section1 {

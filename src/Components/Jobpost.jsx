@@ -19,7 +19,7 @@ const Jobpost = () => {
   return (
     <main>
       {jobLists.map((job, index) => (
-        <div className={Styles.jobPostWrapper} key={index}>
+        <div className={`${Styles.jobPostWrapper} ${job.featured ? Styles.featuredJob : ''}`} key={index}>
           <section className={Styles.section1}>
             <img
               src={images[job.id - 1]}
