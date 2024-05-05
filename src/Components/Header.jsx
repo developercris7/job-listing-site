@@ -1,8 +1,43 @@
-import React from "react";
+import React, { useContext,useEffect } from "react";
 import Styles from "../Styles/header.module.css";
 import { IoMdClose } from "react-icons/io";
+import { DataContext } from "../Context/ContextAPI";
 
-const Header = ({ filterTabs, handleRemoveFilters, handleClearAllFilters }) => {
+const Header = () => {
+  const {
+    data,
+    setJobLists,
+    filterTabs,
+    handleRemoveFilters,
+    handleClearAllFilters,
+  } = useContext(DataContext);
+
+  useEffect(() => {
+    const { role, languages, level, tools } = filterTabs;
+    let filteredJobs = data;
+
+    if (role.length > 0) {
+      filteredJobs = filteredJobs.filter((job) => role.includes(job.role));
+    }
+    if (level.length > 0) {
+      filteredJobs = filteredJobs.filter((job) => level.includes(job.level));
+    }
+
+    if (languages.length > 0) {
+      filteredJobs = filteredJobs.filter((job) =>
+        languages.every((lan) => job.languages.includes(lan))
+      );
+    }
+
+    if (tools.length > 0) {
+      filteredJobs = filteredJobs.filter((job) =>
+        tools.every((lan) => job.tools.includes(lan))
+      );
+    }
+
+    setJobLists(filteredJobs);
+  }, [filterTabs, data, setJobLists]);
+
   return (
     <header>
       {filterTabs.role.length ||
